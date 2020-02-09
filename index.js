@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
-const galleryRouter = require('./routes/gallery');
+const photoRouter = require('./routes/photo');
 
 
 const app = express();
@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost/radiobox', {
 mongoose.set('useCreateIndex', true);
 
 app.use('/', indexRouter);
-app.use('/gallery', galleryRouter);
+app.use('/', photoRouter);
 
 
 const port = process.env.PORT || 3000;
