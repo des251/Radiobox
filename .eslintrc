@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "no-console": ["error", { "allow": ["log", "error"] }],
+    "no-restricted-syntax": ["error", "WithStatement"],
+    "consistent-return": "off",
+    "no-underscore-dangle": "off",
+    "one-var": "off",
+    "one-var-declaration-per-line": "off",
+    "no-plusplus": "off",
+    "no-useless-escape": "off",
+    "func-names": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
+  }
+}
