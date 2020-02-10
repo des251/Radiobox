@@ -1,11 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const indexRouter = require('./routes/index');
+const path = require('path');
+const pagesRouter = require('./routes/pages');
 const photoRouter = require('./routes/photo');
 
 
 const app = express();
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect('mongodb://localhost/radiobox', {
   useNewUrlParser: true,
@@ -15,7 +20,7 @@ mongoose.connect('mongodb://localhost/radiobox', {
   .then(() => console.log('Connected to mongo db...'));
 mongoose.set('useCreateIndex', true);
 
-app.use('/', indexRouter);
+app.use('/', pagesRouter);
 app.use('/', photoRouter);
 
 

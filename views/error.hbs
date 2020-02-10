@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Error page</title>
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #2ECC71;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI, Roboto,
+        Oxygen, Ubuntu,
+        Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue,
+        sans-serif;
+    }
+
+    h2 {
+      font-size: 72px;
+    }
+
+    .err-message {
+      width: 300px;
+      text-align: center;
+      margin: 0 auto;
+      transform: translateY(50%);
+    }
+  </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(47730136, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/47730136" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110528764-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-110528764-1');
+  </script>
+
+</head>
+
+<body>
+  <div class="err-message">
+    <p>что то пошло не так...</p>
+    <h1>{{message}}</h1>
+    <h2>{{error.status}}</h2>
+  </div>
+</body>
+
+</html>
