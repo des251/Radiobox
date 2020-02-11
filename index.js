@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const hbs = require('hbs');
+const fs = require('fs');
 const pagesRouter = require('./routes/pages');
 const photoRouter = require('./routes/photo');
 
+
+hbs.registerPartial('header', fs.readFileSync(`${__dirname}/views/partials/header.hbs`, 'utf8'));
 
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
