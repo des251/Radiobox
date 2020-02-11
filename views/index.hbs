@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 {{> head }}
 
 <body class="home">
+
   {{> preloader}}
+
   <div class="container">
+
     {{> cursor }}
 
     {{> header }}
-    <!-- Wrapper -->
+
     <div class="wrapper">
       <!-- Section Started -->
       <div class="section started" id="section-started">
@@ -16,7 +20,6 @@
         <div class="video-bg">
           <div class="video-bg-mask"></div>
           <div class="video-bg-texture" id="grained_container"></div>
-
           <!-- slider -->
           <div class="started-carousel">
             <div class="swiper-container">
@@ -65,28 +68,7 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="copy">
-        <p>Время работы</p>
-        <p>10:00 - 18:00</p>
-      </div>
-      <div class="soc-box">
-        <div class="follow-label">Мы в соцсетях</div>
-        <div class="soc">
-          <a target="_blank" href="https://vk.com/radioboxbrest/">
-            <span class="icon fab fa-vk"></span>
-          </a>
-          <a target="_blank" href="https://www.instagram.com/radioboxbrest/">
-            <span class="icon fab fa-instagram"></span>
-          </a>
-          <a target="_blank" href="https://www.youtube.com/user/maximumsvoimirukami/">
-            <span class="icon fab fa-youtube-square"></span>
-          </a>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </footer>
+    {{> footer }}
 
     <!-- Lines -->
     <div class="lines">
