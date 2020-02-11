@@ -8,6 +8,8 @@ const photoRouter = require('./routes/photo');
 
 
 hbs.registerPartial('header', fs.readFileSync(`${__dirname}/views/partials/header.hbs`, 'utf8'));
+hbs.registerPartial('yandex-metrika', fs.readFileSync(`${__dirname}/views/partials/yandex-metrika.hbs`, 'utf8'));
+hbs.registerPartial('google-analytics', fs.readFileSync(`${__dirname}/views/partials/google-analytics.hbs`, 'utf8'));
 
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
