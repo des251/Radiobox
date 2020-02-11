@@ -599,17 +599,11 @@
 		},
 		success: 'valid',
 		submitHandler: function() {
-			$('.spinner').show();
-			const formData = {
-				name: $("#cform").find('input[name="name"]').val(),
-				email: $("#cform").find('input[name="email"]').val(),
-				message: $("#cform").find('textarea[name="message"]').val()
-			};
 			$.ajax({
-				url: '/mail',
+				url: 'mailer/feedback.php',
 				type: 'post',
 				dataType: 'json',
-				data: formData,
+				data: 'name='+ $("#cform").find('input[name="name"]').val() + '&email='+ $("#cform").find('input[name="email"]').val() + '&message=' + $("#cform").find('textarea[name="message"]').val(),
 				beforeSend: function() {
 				
 				},
@@ -617,10 +611,8 @@
 				
 				},
 				success: function(data) {
-					$('.spinner').hide();
 					$('#cform').fadeOut();
 					$('.alert-success').delay(1000).fadeIn();
-					$('.alert-success').text(data.message).css('color', data.color);
 				}
 			});
 		}
@@ -639,7 +631,7 @@
 	Google Map Options
 */
 function initMap() {
-	var myLatlng = new google.maps.LatLng(52.097211, 23.690794); // <- Your latitude and longitude
+	var myLatlng = new google.maps.LatLng(48.859003, 2.345275); // <- Your latitude and longitude
 	var styles = [
 		{
 			"stylers": [
@@ -673,7 +665,7 @@ function initMap() {
 			"elementType": "labels",
 			"stylers": [
 				{
-					"visibility": "on"
+					"visibility": "off"
 				}
 	    	]
 	  	},
@@ -689,7 +681,7 @@ function initMap() {
 			"featureType": "administrative.land_parcel",
 			"stylers": [
 				{
-					"visibility": "on"
+					"visibility": "off"
 				}
 			]
 		},
@@ -697,14 +689,14 @@ function initMap() {
 			"featureType": "administrative.neighborhood",
 			"stylers": [
 				{
-					"visibility": "on"
+					"visibility": "off"
 				}
 			]
 		},
 	]
 
 	var mapOptions = {
-		zoom: 18,
+		zoom: 16,
 		center: myLatlng,
 		mapTypeControl: false,
 		disableDefaultUI: true,
@@ -714,35 +706,9 @@ function initMap() {
 	}
 	
 	var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-	var marker = new google.maps.Marker({
+	/*var marker = new google.maps.Marker({
 		position: myLatlng,
 		map: map,
-		title: 'Магазин Radiobox'
-	});
+		title: 'We are here!'
+	});*/
 }
-
-$(document).ready(function() {
-	$(".form-pop-up-link").on('click', (e) => {
-		e.preventDefault();
-		$(".form-pop-up").slideDown();
-		// lock scroll position, but retain settings for later
-		var scrollPosition = [
-			self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
-			self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
-		];
-		var html = jQuery('html');
-		html.data('scroll-position', scrollPosition);
-		html.data('previous-overflow', html.css('overflow'));
-		html.css('overflow', 'hidden');
-		window.scrollTo(scrollPosition[0], scrollPosition[1]);
-	})
-	$(".pop-up-close").on('click', (e) => {
-		e.preventDefault();
-		$(".form-pop-up").slideUp();
-		//unlock screen
-		var html = jQuery('html');
-		var scrollPosition = html.data('scroll-position');
-		html.css('overflow', html.data('previous-overflow'));
-		window.scrollTo(scrollPosition[0], scrollPosition[1])
-	})
-});

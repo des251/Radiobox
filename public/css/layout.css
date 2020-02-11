@@ -977,9 +977,9 @@
 	}
 
 
-	/* .section.started .started-content .h-title br {
+	.section.started .started-content .h-title br {
 		display: none;
-	} */
+	}
 
 
 	.section.started .started-content .h-subtitle,
@@ -3403,10 +3403,7 @@
 .reviews-item .text {
 	clear: both;
 }
-.reviews-item .fa-star {
-	color: #4fcbe9;
-	font-size: 0.7em;
-}
+
 
 /* section testimonials tablet */
 /* section testimonials mobile */
