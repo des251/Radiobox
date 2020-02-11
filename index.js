@@ -9,6 +9,7 @@ const photoRouter = require('./routes/photo');
 hbs.registerPartial('head', fs.readFileSync(`${__dirname}/views/partials/head.hbs`, 'utf8'));
 hbs.registerPartial('header', fs.readFileSync(`${__dirname}/views/partials/header.hbs`, 'utf8'));
 hbs.registerPartial('preloader', fs.readFileSync(`${__dirname}/views/partials/preloader.hbs`, 'utf8'));
+hbs.registerPartial('cursor', fs.readFileSync(`${__dirname}/views/partials/cursor.hbs`, 'utf8'));
 
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
