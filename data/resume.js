@@ -91,6 +91,30 @@ const testimonials = [
   },
 ];
 
+const clients = [
+  {
+    link: 'https://www.robiton.ru/',
+    logo: 'images/robiton-logo.png',
+    name: 'Robiton',
+  },
+  {
+    link: 'https://www.rexant.ru/',
+    logo: 'images/rexant-logo.png',
+    name: 'Rexant',
+  },
+  {
+    link: 'http://www.proconnect.su/',
+    logo: 'images/proconnect-logo.png',
+    name: 'Proconnect',
+  },
+  {
+    link: 'https://hocotech.com/ru/',
+    logo: 'images/hoco-logo.png',
+    name: 'Hoco',
+  },
+];
+
 module.exports.serviceItems = serviceItems;
 module.exports.team = team;
 module.exports.testimonials = testimonials;
+module.exports.clients = clients;

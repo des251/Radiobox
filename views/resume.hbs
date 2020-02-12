@@ -166,34 +166,15 @@
           </div>
           <div class="content-box">
             <div class="clients-items">
+              {{#each clients}}
               <div class="clients-col">
                 <div class="clients-item">
-                  <a target="_blank" href="https://www.robiton.ru/">
-                    <img src="images/robiton-logo.png" alt="Robiton" />
+                  <a target="_blank" href="{{this.link}}">
+                    <img src="{{this.logo}}" alt="{{this.name}}" />
                   </a>
                 </div>
               </div>
-              <div class="clients-col">
-                <div class="clients-item">
-                  <a target="_blank" href="https://www.rexant.ru/">
-                    <img src="images/rexant-logo.png" alt="Rexant" />
-                  </a>
-                </div>
-              </div>
-              <div class="clients-col">
-                <div class="clients-item">
-                  <a target="_blank" href="http://www.proconnect.su/">
-                    <img src="images/proconnect-logo.png" alt="Proconnect" />
-                  </a>
-                </div>
-              </div>
-              <div class="clients-col">
-                <div class="clients-item">
-                  <a target="_blank" href="https://hocotech.com/ru/">
-                    <img src="images/hoco-logo.png" alt="Hoco" />
-                  </a>
-                </div>
-              </div>
+              {{/each}}
             </div>
           </div>
           <div class="clear"></div>
