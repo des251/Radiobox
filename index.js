@@ -6,13 +6,19 @@ const fs = require('fs');
 const pagesRouter = require('./routes/pages');
 const photoRouter = require('./routes/photo');
 
-hbs.registerPartial('head', fs.readFileSync(`${__dirname}/views/partials/head.hbs`, 'utf8'));
-hbs.registerPartial('header', fs.readFileSync(`${__dirname}/views/partials/header.hbs`, 'utf8'));
-hbs.registerPartial('preloader', fs.readFileSync(`${__dirname}/views/partials/preloader.hbs`, 'utf8'));
-hbs.registerPartial('cursor', fs.readFileSync(`${__dirname}/views/partials/cursor.hbs`, 'utf8'));
-hbs.registerPartial('footer', fs.readFileSync(`${__dirname}/views/partials/footer.hbs`, 'utf8'));
-hbs.registerPartial('lines', fs.readFileSync(`${__dirname}/views/partials/lines.hbs`, 'utf8'));
-hbs.registerPartial('chevron', fs.readFileSync(`${__dirname}/views/partials/chevron.hbs`, 'utf8'));
+const partials = [
+  'head',
+  'header',
+  'preloader',
+  'cursor',
+  'footer',
+  'lines',
+  'chevron',
+];
+
+partials.forEach((el) => {
+  hbs.registerPartial(el, fs.readFileSync(`${__dirname}/views/partials/${el}.hbs`, 'utf8'));
+});
 
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
