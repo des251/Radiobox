@@ -8,6 +8,7 @@
     {{> cursor }}
     {{> header }}
     <div class="wrapper">
+      {{!-- start --}}
       <div class="section started section-title" id="section-started">
         <div class="video-bg jarallax" style="background-image: url(images/bulb_bg.jpg);">
           <div class="video-bg-mask"></div>
@@ -30,6 +31,7 @@
         </div>
         {{> chevron }}
       </div>
+      {{!-- about --}}
       <div class="section about" id="section-about">
         <div class="content content-box">
           <div class="image">
@@ -129,115 +131,24 @@
           <div class="reviews-carousel">
             <div class="swiper-container">
               <div class="swiper-wrapper">
+                {{#each testimonials}}
                 <div class="swiper-slide">
                   <div class="reviews-item content-box">
                     <div class="image">
-                      <img src="images/user1.png" alt="джон сноу" />
+                      <img src="{{this.img}}" alt="{{this.name}}" />
                     </div>
                     <div class="info">
-                      <div class="name">джон сноу</div>
+                      <div class="name">{{this.name}}</div>
                       <div class="company">
+                        {{#times this.rate}}
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        {{/times}}
                       </div>
                     </div>
-                    <div class="text">
-                      Единственный магазин, где удалось найти глицериновый
-                      флюс. Приятный магазин и персонал. 👍
-                    </div>
+                    <div class="text">{{this.text}}</div>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="reviews-item content-box">
-                    <div class="image">
-                      <img src="images/user2.png" alt="Ola Korolczuk" />
-                    </div>
-                    <div class="info">
-                      <div class="name">Ola Korolczuk</div>
-                      <div class="company">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </div>
-                    </div>
-                    <div class="text">
-                      Отличный магазин! Огромный выбор товаров) уже много
-                      времени покупаю там нужные мне товары, покупала зарядку
-                      для телефона, отлично работает уже не первый год! И
-                      отдельное спасибо продавцам;) вежливость и умение
-                      слушать, что хочет покупатель это сейчас редкость) всем
-                      советую!
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="reviews-item content-box">
-                    <div class="image">
-                      <img src="images/user3.png" alt="0.5 WATT" />
-                    </div>
-                    <div class="info">
-                      <div class="name">0.5 WATT</div>
-                      <div class="company">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </div>
-                    </div>
-                    <div class="text">
-                      Самый лучший магазин радио компонентов в городе Бресте.
-                      Очень приятное и вежливое обслуживание. Всегда нахожу то
-                      что нужно.
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="reviews-item content-box">
-                    <div class="image">
-                      <img src="images/user4.png" alt="Сеня Щербинский" />
-                    </div>
-                    <div class="info">
-                      <div class="name">Сеня Щербинский</div>
-                      <div class="company">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </div>
-                    </div>
-                    <div class="text">
-                      Лучший магазин, огромный ассортимент и персонал
-                      приятный, все на высшем уровне, закупаться только там)
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="reviews-item content-box">
-                    <div class="image">
-                      <img src="images/user5.png" alt="Александр Огородник" />
-                    </div>
-                    <div class="info">
-                      <div class="name">Александр Огородник</div>
-                      <div class="company">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </div>
-                    </div>
-                    <div class="text">
-                      Хороший выбор, и приятный продавец.
-                    </div>
-                  </div>
-                </div>
+                {{/each}}
               </div>
             </div>
             <div class="swiper-nav">
@@ -247,6 +158,7 @@
           </div>
         </div>
       </div>
+      {{!-- clients --}}
       <div class="section clients" id="section-clients">
         <div class="content">
           <div class="title">
@@ -287,6 +199,7 @@
           <div class="clear"></div>
         </div>
       </div>
+      {{!-- subscribe --}}
       <div class="section custom-text" id="section-custom-text">
         <div class="content">
           <div class="title">

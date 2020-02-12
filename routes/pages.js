@@ -1,5 +1,5 @@
 const express = require('express');
-const { serviceItems, team } = require('../data/resume');
+const { serviceItems, team, testimonials } = require('../data/resume');
 
 const router = new express.Router();
 
@@ -22,6 +22,7 @@ router.get('/resume', (req, res) => {
     },
     serviceItems,
     team,
+    testimonials,
   });
 });
 
