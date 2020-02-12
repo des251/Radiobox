@@ -1,5 +1,5 @@
 const express = require('express');
-const { serviceItems } = require('../data/resume');
+const { serviceItems, team } = require('../data/resume');
 
 const router = new express.Router();
 
@@ -21,6 +21,7 @@ router.get('/resume', (req, res) => {
       keywords: 'адрес: Куйбышева 13, контакты radiobox, отзывы radiobox, партнеры radiobox, персонал radiobox',
     },
     serviceItems,
+    team,
   });
 });
 

@@ -31,5 +31,33 @@ const serviceItems = [
   },
 ];
 
+const team = [
+  {
+    img: 'images/vasia-2.jpg',
+    name: 'Василий Гаранин',
+    category: 'Продавец-консультант, менеджер по закупкам',
+    vk: 'https://vk.com/id93975502/',
+    inst: 'https://www.instagram.com/tweek8788/',
+    fb: 'https://www.facebook.com/valbrestgsm/',
+  },
+  {
+    img: 'images/denis.jpg',
+    name: 'Денис Щербинский',
+    category: 'Продавец-консультант, бухгалтер, администратор сайта',
+    vk: 'https://vk.com/id5826206/',
+    inst: 'https://www.instagram.com/des251/',
+    fb: 'https://www.facebook.com/profile.php?id=100001908954271/',
+  },
+  {
+    img: 'images/nadia.jpg',
+    name: 'Надежда Щербинская',
+    category: 'Директор',
+    vk: 'https://vk.com/id144808401/',
+    inst: 'https://www.instagram.com/lumpa27/',
+    fb: '',
+  },
+];
+
 
 module.exports.serviceItems = serviceItems;
+module.exports.team = team;
