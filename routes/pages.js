@@ -1,4 +1,5 @@
 const express = require('express');
+const { serviceItems } = require('../data/resume');
 
 const router = new express.Router();
 
@@ -19,6 +20,7 @@ router.get('/resume', (req, res) => {
       description: 'О магазине radiobox',
       keywords: 'адрес: Куйбышева 13, контакты radiobox, отзывы radiobox, партнеры radiobox, персонал radiobox',
     },
+    serviceItems,
   });
 });
 

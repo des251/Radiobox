@@ -62,95 +62,29 @@
           <div class="clear"></div>
         </div>
       </div>
+      {{!-- service --}}
       <div class="section service" id="section-services">
         <div class="content">
           <div class="title">
             <div class="title_inner">Ассортимент</div>
           </div>
           <div class="service-items">
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon"><span class="fas fa-tools"></span></div>
-                <div class="name">Все для пайки и радиомонтажа</div>
-                <div class="text">
-                  У нас в ассортименте имеются аккумуляторы и зарядные
-                  устройства, измерительные приборы, куллеры, блоки питания,
-                  кнопки, тумблеры, выклучатели, большой выбор химии для пайки
-                  и радиомонтажа, припой. А так же термоусадочная трубка,
-                  текстолит, макетные платы и оптика.
-                </div>
-              </div>
-            </div>
+            {{#each serviceItems}}
             <div class="service-col">
               <div class="service-item content-box">
                 <div class="icon">
-                  <span class="fas fa-charging-station"></span>
+                  <span class="{{this.icon}}"></span>
                 </div>
-                <div class="name">Аксессуары GSM</div>
-                <div class="text">
-                  Подберем зарядное устройство для вашего мобильного телефона.
-                  Так же в продаже имеются шнуры USB ,для подключения
-                  мобильного телефона к компьютеру, наушники, аккумуляторы,
-                  USB- хабы , картридеры...
-                </div>
+                <div class="name">{{this.name}}</div>
+                <div class="text">{{this.text}}</div>
               </div>
             </div>
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon"><span class="fas fa-microchip"></span></div>
-                <div class="name">Радиокомпоненты</div>
-                <div class="text">
-                  С чего начинается практическая электроника? Конечно с
-                  радиодеталей! Их разнообразие просто поражает. У нас вы
-                  сможете найти конденсаторы, транзисторы, диоды,
-                  потенциометры и многое другое. Есть в наличии и под заказ.
-                </div>
-              </div>
-            </div>
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon">
-                  <span class="fas fa-network-wired"></span>
-                </div>
-                <div class="name">Шнуры, кабели, переходники</div>
-                <div class="text">
-                  Кабельная продукция и комплектующие, предназначенные для
-                  монтажа сетей широкополосного доступа в интернет, кабельного
-                  и спутникового TV, телефонии, систем видеонаблюдения. Это
-                  витая пара, коаксиальный кабель, акустический, телефонный,
-                  кабельная продукция для ZALA, аудио и видео переходники.
-                </div>
-              </div>
-            </div>
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon"><span class="fas fa-gamepad"></span></div>
-                <div class="name">Пульты дистанционного управления</div>
-                <div class="text">
-                  Пульты для импортных и отечественных телевизоров, также для
-                  спутниковых ресиверов, цифровых приставок, для
-                  кондиционеров. Большой ассортимент пультов в наличии и под
-                  заказ.
-                </div>
-              </div>
-            </div>
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon">
-                  <span class="fas fa-lightbulb"></span>
-                </div>
-                <div class="name">Светодиодная продукция</div>
-                <div class="text">
-                  Светодиоды, cветодиодная лента, cветодиодные модули,
-                  cветодиодные лампочки, cветодиодные фонари, cветодиодные
-                  прожекторы
-                </div>
-              </div>
-            </div>
+            {{/each}}
           </div>
           <div class="clear"></div>
         </div>
       </div>
+      {{!-- team --}}
       <div class="section team" id="section-team">
         <div class="content">
           <div class="title">
