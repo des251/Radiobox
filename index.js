@@ -11,6 +11,7 @@ hbs.registerPartial('header', fs.readFileSync(`${__dirname}/views/partials/heade
 hbs.registerPartial('preloader', fs.readFileSync(`${__dirname}/views/partials/preloader.hbs`, 'utf8'));
 hbs.registerPartial('cursor', fs.readFileSync(`${__dirname}/views/partials/cursor.hbs`, 'utf8'));
 hbs.registerPartial('footer', fs.readFileSync(`${__dirname}/views/partials/footer.hbs`, 'utf8'));
+hbs.registerPartial('lines', fs.readFileSync(`${__dirname}/views/partials/lines.hbs`, 'utf8'));
 
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
