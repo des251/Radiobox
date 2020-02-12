@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 {{> head }}
 
 <body class="home">
-
   {{> preloader}}
-
   <div class="container">
-
     {{> cursor }}
-
     {{> header }}
-
     <div class="wrapper">
       <div class="section started" id="section-started">
-        <!-- background -->
         <div class="video-bg">
           <div class="video-bg-mask"></div>
           <div class="video-bg-texture" id="grained_container"></div>
-          <!-- slider -->
           <div class="started-carousel">
             <div class="swiper-container">
               <div class="swiper-wrapper">
@@ -39,14 +31,10 @@
             </div>
           </div>
         </div>
-
-        <!-- slider navigation -->
         <div class="swiper-nav">
           <a class="prev swiper-button-prev fas fa-long-arrow-alt-left"></a>
           <a class="next swiper-button-next fas fa-long-arrow-alt-right"></a>
         </div>
-
-        <!-- content -->
         <div class="centrize full-width">
           <div class="vertical-center">
             <div class="started-content">
@@ -66,14 +54,9 @@
         </div>
       </div>
     </div>
-
     {{> footer }}
-
     {{> lines }}
-
   </div>
-
-  <!-- Scripts -->
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.validate.js"></script>
   <script src="js/magnific-popup.js"></script>
