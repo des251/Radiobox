@@ -14,6 +14,7 @@ const partials = [
   'footer',
   'lines',
   'chevron',
+  'service-items',
 ];
 
 partials.forEach((el) => {
