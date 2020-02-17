@@ -8,6 +8,7 @@
     {{> cursor }}
     {{> header }}
     <div class="wrapper">
+      {{!-- start --}}
       <div class="section started section-title" id="section-started">
         <div class="video-bg">
           <div class="map" id="map"></div>
@@ -31,48 +32,17 @@
         </div>
         {{> chevron }}
       </div>
+      {{!-- contacts --}}
       <div class="section contacts" id="section-contacts-info">
         <div class="content">
           <div class="title">
             <div class="title_inner">Контактная информация</div>
           </div>
-          <div class="service-items">
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon"><span class="fas fa-phone"></span></div>
-                <div class="name">Телефон</div>
-                <div class="text">+375 (29) 862 56 84</div>
-              </div>
-            </div>
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon"><span class="fab fa-viber"></span></div>
-                <div class="name">Viber</div>
-                <div class="text">+375 (29) 524 87 88</div>
-              </div>
-            </div>
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon"><span class="fas fa-envelope"></span></div>
-                <div class="name">Email</div>
-                <div class="text">
-                  <a href="mailto:valbrestgsm@mail.ru">valbrestgsm@mail.ru</a>
-                </div>
-              </div>
-            </div>
-            <div class="service-col">
-              <div class="service-item content-box">
-                <div class="icon">
-                  <span class="fas fa-map-marker-alt"></span>
-                </div>
-                <div class="name">Адрес</div>
-                <div class="text">Брест, ул.Куйбышева 13 пав.4</div>
-              </div>
-            </div>
-          </div>
+          {{> service-items }}
           <div class="clear"></div>
         </div>
       </div>
+      {{!-- form --}}
       <div class="section contacts" id="section-contacts">
         <div class="content">
           <div class="title">

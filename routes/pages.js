@@ -1,7 +1,7 @@
 const express = require('express');
 const {
   serviceItems, team, testimonials, clients,
-} = require('../data/resume');
+} = require('../data/data');
 
 const router = new express.Router();
 
@@ -22,7 +22,7 @@ router.get('/resume', (req, res) => {
       description: 'О магазине radiobox',
       keywords: 'адрес: Куйбышева 13, контакты radiobox, отзывы radiobox, партнеры radiobox, персонал radiobox',
     },
-    serviceItems,
+    serviceItems: serviceItems.resume,
     team,
     testimonials,
     clients,
@@ -46,6 +46,7 @@ router.get('/contacts', (req, res) => {
       description: 'контакты магазина radiobox',
       keywords: '+375 (29) 862 56 84, valbrestgsm@mail.ru',
     },
+    serviceItems: serviceItems.contacts,
   });
 });
 
