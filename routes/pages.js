@@ -1,6 +1,10 @@
 const express = require('express');
 const {
-  serviceItems, team, testimonials, clients,
+  serviceItems,
+  team,
+  testimonials,
+  clients,
+  photo,
 } = require('../data/data');
 
 const router = new express.Router();
@@ -39,11 +43,22 @@ router.get('/works', (req, res) => {
   });
 });
 
+router.get('/photo', (req, res) => {
+  res.render('photo', {
+    active: { works: true },
+    meta: {
+      description: 'Фото магазина radiobox',
+      keywords: 'фото, фотогалерея',
+    },
+    photo,
+  });
+});
+
 router.get('/contacts', (req, res) => {
   res.render('contacts', {
     active: { contacts: true },
     meta: {
-      description: 'контакты магазина radiobox',
+      description: 'Контакты магазина radiobox',
       keywords: '+375 (29) 862 56 84, valbrestgsm@mail.ru',
     },
     serviceItems: serviceItems.contacts,
