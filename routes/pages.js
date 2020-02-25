@@ -78,6 +78,16 @@ router.get('/links', (req, res) => {
   });
 });
 
+router.get('/pop-items', (req, res) => {
+  res.render('pop-items', {
+    active: { works: true },
+    meta: {
+      description: 'Популярные товары',
+      keywords: 'Электротехнические товары',
+    },
+  });
+});
+
 router.get('/contacts', (req, res) => {
   res.render('contacts', {
     active: { contacts: true },
