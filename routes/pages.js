@@ -6,6 +6,7 @@ const {
   clients,
   photo,
   video,
+  links,
 } = require('../data/data');
 
 const router = new express.Router();
@@ -63,6 +64,17 @@ router.get('/video', (req, res) => {
       keywords: 'dvm, все своими руками',
     },
     video,
+  });
+});
+
+router.get('/links', (req, res) => {
+  res.render('links', {
+    active: { works: true },
+    meta: {
+      description: 'Журналы Rexant',
+      keywords: 'Ссылки на журналы компании Rexant',
+    },
+    links,
   });
 });
 

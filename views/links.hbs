@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+{{> head }}
+
+<body>
+  {{> preloader }}
+  <div class="container">
+    {{> cursor }}
+    {{> header }}
+    <div class="wrapper">
+      <!-- start -->
+      <div class="section started layout-creative" id="section-started">
+        <div class="video-bg">
+          <div class="video-bg-mask"></div>
+          <div class="video-bg-texture" id="grained_container"></div>
+        </div>
+        <div class="centrize full-width">
+          <div class="vertical-center">
+            <div class="started-content">
+              <h1 class="h-title">Журналы "Rexant"</h1>
+              <div class="h-subtitles">
+                <div class="h-subtitle typing-subtitle" style="display: none;">
+                  <p>Электротехническое <strong>оборудование</strong></p>
+                  <p>Аудио - <strong>Видео</strong></p>
+                  <p>Электро <strong>Инструмент</strong></p>
+                </div>
+                <span class="typed-subtitle"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- links -->
+      <div class="section works" id="section-portfolio">
+        <div class="content">
+          <div class="box-items portfolio-items">
+            {{#each links}}
+            <div class="box-item f-links">
+              <div class="image">
+                <a href="{{this.link}}" class="has-popup-link hover-animated" target="_blank">
+                  <img src="{{this.img}}" class="wp-post-image" alt="{{this.title}}" />
+                  <span class="info circle">
+                    <span class="centrize full-width">
+                      <span class="vertical-center">
+                        <span class="icon fas fa-link"></span>
+                        <span class="desc">
+                          <span class="category">Перейти</span>
+                          <span class="name">{{this.title}}</span>
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    {{> footer }}
+    {{> lines }}
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.validate.js"></script>
+  <script src="js/magnific-popup.js"></script>
+  <script src="js/simpleParallax.js"></script>
+  <script src="js/typed.js"></script>
+  <script src="js/jarallax.js"></script>
+  <script src="js/jarallax-video.js"></script>
+  <script src="js/jarallax-element.js"></script>
+  <script src="js/imagesloaded.pkgd.js"></script>
+  <script src="js/isotope.pkgd.js"></script>
+  <script src="js/swiper.js"></script>
+  <script src="js/grained.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
