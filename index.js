@@ -42,7 +42,7 @@ mongoose.connect('mongodb://localhost/radiobox', {
 mongoose.set('useCreateIndex', true);
 
 app.use('/', pagesRouter);
-app.use('/', photoRouter);
+app.use('/api', photoRouter);
 
 
 const port = process.env.PORT || 3000;
