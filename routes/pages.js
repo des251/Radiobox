@@ -5,6 +5,7 @@ const {
   testimonials,
   clients,
   photo,
+  video,
 } = require('../data/data');
 
 const router = new express.Router();
@@ -51,6 +52,17 @@ router.get('/photo', (req, res) => {
       keywords: 'фото, фотогалерея',
     },
     photo,
+  });
+});
+
+router.get('/video', (req, res) => {
+  res.render('video', {
+    active: { works: true },
+    meta: {
+      description: 'Видео с youtube канала dvm',
+      keywords: 'dvm, все своими руками',
+    },
+    video,
   });
 });
 
