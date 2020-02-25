@@ -5,16 +5,27 @@
 
 <body>
   {{> preloader }}
+
+  <!-- Container -->
   <div class="container">
     {{> cursor }}
     {{> header }}
+    <!-- Wrapper -->
     <div class="wrapper">
-      <!-- start -->
+      <!-- Section Started -->
       <div class="section started section-title" id="section-started">
-        <div class="video-bg jarallax" style="background-image: url(images/bulb_bg.jpg);">
+        <!-- background -->
+        {{!-- <div class="video-bg jarallax" style="background-image: url(images/bulb_bg.jpg);">
+          <div class="video-bg-mask"></div>
+          <div class="video-bg-texture" id="grained_container"></div>
+        </div> --}}
+        <div id="started-video-bg" class="video-bg media-bg jarallax-video video-mobile-bg"
+          data-jarallax-video="https://youtu.be/lcZTd3HmCvY" data-mobile-preview="images/started_image_p.jpg"
+          data-volume="0">
           <div class="video-bg-mask"></div>
           <div class="video-bg-texture" id="grained_container"></div>
         </div>
+        <!-- started content -->
         <div class="centrize full-width">
           <div class="vertical-center">
             <div class="started-content">
@@ -30,25 +41,49 @@
             </div>
           </div>
         </div>
+
         {{> chevron }}
+
       </div>
-      <!-- gallery -->
+
+      <!-- Works -->
       <div class="section works" id="section-portfolio">
         <div class="content">
+          <!-- portfolio filter -->
+          <!-- Все Фото Товар Видео Статьи -->
+          <div class="filter-menu content-box">
+            <div class="filters">
+              <div class="btn-group">
+                <label data-text="All" class="glitch-effect"><input type="radio" name="fl_radio"
+                    value=".box-item" />Все</label>
+              </div>
+              <div class="btn-group">
+                <label data-text="Image"><input type="radio" name="fl_radio" value=".f-image" />Фото</label>
+              </div>
+              <div class="btn-group">
+                <label data-text="Video"><input type="radio" name="fl_radio" value=".f-video" />Видео</label>
+              </div>
+              <div class="btn-group">
+                <label data-text="Links"><input type="radio" name="fl_radio" value=".f-links" />Журналы</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- portfolio items -->
           <div class="box-items portfolio-items">
-
-            <div class="box-item f-links">
-              <!-- add class "animate-to-page" if need animated transition to page and delete target="_blank" -->
+            <!-- images -->
+            {{#each images}}
+            <div class="box-item f-image">
               <div class="image">
-                <a href="https://google.com/" class="has-popup-link hover-animated" target="_blank">
-                  <img src="images/f-image/11.jpg" class="wp-post-image" alt="" />
+                <a href="{{this.img}}" class="has-popup-image hover-animated">
+                  <img src="{{this.img}}" class="wp-post-image" alt="{{this.alt}}" />
                   <span class="info circle">
                     <span class="centrize full-width">
                       <span class="vertical-center">
-                        <span class="icon fas fa-link"></span>
+                        <span class="icon fas fa-image"></span>
                         <span class="desc">
-                          <span class="category">Links</span>
-                          <span class="name">Nike Red</span>
+                          <span class="category">Фото</span>
+                          <span class="name"><i class="fas fa-search-plus"></i></span>
                         </span>
                       </span>
                     </span>
@@ -56,19 +91,22 @@
                 </a>
               </div>
             </div>
+            {{/each}}
 
+            <!-- links -->
+            {{#each links}}
             <div class="box-item f-links">
               <!-- add class "animate-to-page" if need animated transition to page and delete target="_blank" -->
               <div class="image">
-                <a href="https://google.com/" class="has-popup-link hover-animated" target="_blank">
-                  <img src="images/f-image/11.jpg" class="wp-post-image" alt="" />
+                <a href="{{this.link}}" class="has-popup-link hover-animated" target="_blank">
+                  <img src="{{this.img}}" class="wp-post-image" alt="{{this.title}}" />
                   <span class="info circle">
                     <span class="centrize full-width">
                       <span class="vertical-center">
                         <span class="icon fas fa-link"></span>
                         <span class="desc">
-                          <span class="category">Links</span>
-                          <span class="name">Nike Red</span>
+                          <span class="category">Перейти</span>
+                          <span class="name">{{this.title}}</span>
                         </span>
                       </span>
                     </span>
@@ -76,19 +114,21 @@
                 </a>
               </div>
             </div>
+            {{/each}}
 
-            <div class="box-item f-links">
-              <!-- add class "animate-to-page" if need animated transition to page and delete target="_blank" -->
+            <!-- video -->
+            {{#each video}}
+            <div class="box-item f-video">
               <div class="image">
-                <a href="https://google.com/" class="has-popup-link hover-animated" target="_blank">
-                  <img src="images/f-image/11.jpg" class="wp-post-image" alt="" />
+                <a href="{{this.link}}" class="has-popup-video hover-animated">
+                  <img src="{{this.img}}" class="wp-post-image" alt="{{this.title}}" />
                   <span class="info circle">
                     <span class="centrize full-width">
                       <span class="vertical-center">
-                        <span class="icon fas fa-link"></span>
+                        <span class="icon fas fa-video"></span>
                         <span class="desc">
-                          <span class="category">Links</span>
-                          <span class="name">Nike Red</span>
+                          <span class="category">Видео</span>
+                          <span class="name">{{this.title}}</span>
                         </span>
                       </span>
                     </span>
@@ -96,34 +136,19 @@
                 </a>
               </div>
             </div>
-
-            <div class="box-item f-links">
-              <!-- add class "animate-to-page" if need animated transition to page and delete target="_blank" -->
-              <div class="image">
-                <a href="https://google.com/" class="has-popup-link hover-animated" target="_blank">
-                  <img src="images/f-image/11.jpg" class="wp-post-image" alt="" />
-                  <span class="info circle">
-                    <span class="centrize full-width">
-                      <span class="vertical-center">
-                        <span class="icon fas fa-link"></span>
-                        <span class="desc">
-                          <span class="category">Links</span>
-                          <span class="name">Nike Red</span>
-                        </span>
-                      </span>
-                    </span>
-                  </span>
-                </a>
-              </div>
-            </div>
+            {{/each}}
 
           </div>
+
           <div class="clear"></div>
         </div>
       </div>
     </div>
+
     {{> footer }}
+
     {{> lines }}
+
   </div>
 
   <!-- Scripts -->
@@ -140,6 +165,7 @@
   <script src="js/swiper.js"></script>
   <script src="js/grained.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/shuffle.js"></script>
 </body>
 
 </html>
