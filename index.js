@@ -1,10 +1,8 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const path = require('path');
 const hbs = require('hbs');
 const fs = require('fs');
 const pagesRouter = require('./routes/pages');
-const photoRouter = require('./routes/photo');
 
 const partials = [
   'head',
@@ -33,16 +31,7 @@ app.set('view engine', 'hbs');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost/radiobox', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-})
-  .then(() => console.log('Connected to mongo db...'));
-mongoose.set('useCreateIndex', true);
-
 app.use('/', pagesRouter);
-app.use('/api', photoRouter);
 
 
 const port = process.env.PORT || 3000;
