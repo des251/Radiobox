@@ -418,14 +418,14 @@
 		disableOn: 700,
 		type: 'iframe',
 		iframe: {
-            patterns: {
-                youtube_short: {
-                  index: 'youtu.be/',
-                  id: 'youtu.be/',
-                  src: 'https://www.youtube.com/embed/%id%?autoplay=1'
-                }
-            }
-        },
+			patterns: {
+				youtube_short: {
+				  index: 'youtu.be/',
+				  id: 'youtu.be/',
+				  src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+				}
+			}
+		},
 		removalDelay: 160,
 		preloader: false,
 		fixedContentPos: false,
@@ -453,22 +453,22 @@
 		Gallery popup
 	*/
 	$('.has-popup-gallery').on('click', function() {
-        var gallery = $(this).attr('href');
-    
-        $(gallery).magnificPopup({
-            delegate: 'a',
-            type:'image',
-            closeOnContentClick: false,
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            fixedContentPos: false,
-            gallery: {
-                enabled: true
-            }
-        }).magnificPopup('open');
+		var gallery = $(this).attr('href');
+	
+		$(gallery).magnificPopup({
+			delegate: 'a',
+			type:'image',
+			closeOnContentClick: false,
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			fixedContentPos: false,
+			gallery: {
+				enabled: true
+			}
+		}).magnificPopup('open');
 
-        return false;
-    });
+		return false;
+	});
 
 	/*
 		Background enabled
@@ -582,7 +582,7 @@
 	});
 
 	/*
-		Validate Contact Form
+	Validate Contact Form
 	*/
 	$('#cform').validate({
 		rules: {
@@ -599,11 +599,17 @@
 		},
 		success: 'valid',
 		submitHandler: function() {
+			$('.form-spinner').show();
+			const formData = {
+				name: $("#cform").find('input[name="name"]').val(),
+				email: $("#cform").find('input[name="email"]').val(),
+				message: $("#cform").find('textarea[name="message"]').val()
+			};
 			$.ajax({
-				url: 'mailer/feedback.php',
+				url: '/mail',
 				type: 'post',
 				dataType: 'json',
-				data: 'name='+ $("#cform").find('input[name="name"]').val() + '&email='+ $("#cform").find('input[name="email"]').val() + '&message=' + $("#cform").find('textarea[name="message"]').val(),
+				data: formData,
 				beforeSend: function() {
 				
 				},
@@ -611,8 +617,10 @@
 				
 				},
 				success: function(data) {
+					$('.form-spinner').hide();
 					$('#cform').fadeOut();
 					$('.alert-success').delay(1000).fadeIn();
+					$('.alert-success').text(data.message).css('color', data.color);
 				}
 			});
 		}
@@ -667,7 +675,7 @@ function initMap() {
 				{
 					"visibility": "off"
 				}
-	    	]
+			]
 	  	},
 		{
 			"elementType": "labels.icon",
