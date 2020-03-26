@@ -5,6 +5,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 const pagesRouter = require('./routes/pages');
 const mailRouter = require('./routes/mail');
+const error = require('./middleware/error');
 
 const partials = [
   'head',
@@ -27,6 +28,8 @@ hbs.registerHelper('times', (n, block) => {
 });
 
 const app = express();
+require('./startup/logging')();
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -36,18 +39,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', pagesRouter);
 app.use('/mail', mailRouter);
-
 app.use((req, res, next) => {
   next(createError(404));
 });
+app.use(error);
 
-app.use((err, req, res, next) => {
-  res.locals.message = err.message;
-  res.locals.error = err;
-
-  res.status(err.status || 500);
-  res.render('error');
-});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
