@@ -3,7 +3,7 @@ const express = require('express');
 const router = new express.Router();
 const nodemailer = require('nodemailer');
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res, next) => {
   const output = `
     <h2>Cообщение с сайта radiobox.by</h2>
     <ul>  
@@ -26,30 +26,18 @@ router.post('/', (req, res) => {
     },
   });
 
-  const mailOptions = {
-    from: '"Radiobox" <admin@radiobox.by>',
-    to: ['admin@radiobox.by'],
-    subject: 'Запрос с сайта radiobox.by',
-    text: 'Магазин радиотоваров в Бресте',
-    html: output,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-      res.send(JSON.stringify({
-        message: 'Что-то пошло не так...',
-        error: `${error}`,
-        color: '#f3969a',
-      }));
-    }
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    res.send(JSON.stringify({
-      message: 'Сообщение успешно отправлено !',
-      color: '#56cc9d',
-    }));
-  });
+  try {
+    await transporter.sendMail({
+      from: '"Radiobox" <admin@radiobox.by>',
+      to: ['admin@radiobox.by'],
+      subject: 'Запрос с сайта radiobox.by',
+      text: 'Магазин радиотоваров в Бресте',
+      html: output,
+    });
+    res.status(200).send('OK');
+  } catch (ex) {
+    next(ex);
+  }
 });
 
 module.exports = router;

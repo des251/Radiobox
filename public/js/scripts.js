@@ -613,15 +613,14 @@
 				beforeSend: function() {
 				
 				},
-				complete: function() {
-				
-				},
-				success: function(data) {
+				complete: function(xhr, textStatus) {
+					const text = xhr.status !== 200 ? 'Что-то пошло не так...' : 'Сообщение успешно отправлено !';
+					const color = xhr.status !== 200 ? '#f3969a' : '#56cc9d';
 					$('.form-spinner').hide();
 					$('#cform').fadeOut();
 					$('.alert-success').delay(1000).fadeIn();
-					$('.alert-success').text(data.message).css('color', data.color);
-				}
+					$('.alert-success').text(text).css('color', color);
+				},
 			});
 		}
 	});
