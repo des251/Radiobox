@@ -9,4 +9,9 @@ module.exports = function () {
     handleExceptions: true,
     level: 'error',
   }));
+  if (process.env.NODE_ENV !== 'production') {
+    winston.add(new winston.transports.Console({
+      level: 'info',
+    }));
+  }
 };
