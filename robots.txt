@@ -1,0 +1,3 @@
+Sitemap: https://radiobox.by/sitemap.xml
+User-agent: *
+Disallow:
